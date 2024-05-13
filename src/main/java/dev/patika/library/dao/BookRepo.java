@@ -1,10 +1,10 @@
 package dev.patika.library.dao;
 
-import dev.patika.library.entities.Publisher;
+import dev.patika.library.entities.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PublisherRepo extends JpaRepository<Publisher, Integer> {
+public interface BookRepo extends JpaRepository<Book ,Integer> {
 
 }

@@ -1,5 +1,7 @@
 package dev.patika.library.core.config.modelMapper;
 
+import dev.patika.library.core.exception.NotFoundException;
+import dev.patika.library.core.result.Result;
 import dev.patika.library.core.result.ResultData;
 import dev.patika.library.core.utilities.Msg;
 import dev.patika.library.core.utilities.ResultHelper;
@@ -15,6 +17,11 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+    @ExceptionHandler(NotFoundException.class)
+    public  ResponseEntity<Result> handleNotFoundException(NotFoundException e){
+        return new ResponseEntity<>(ResultHelper.notFoundError(e.getMessage()),HttpStatus.NOT_FOUND);
+    }
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ResultData<List<String>>> handleValidationErrors(MethodArgumentNotValidException e){
 

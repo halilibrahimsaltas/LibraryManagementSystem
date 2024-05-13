@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name="publisher")
 @Data
@@ -27,9 +29,39 @@ public class Publisher {
     private String publisherAddress;
 
 
-    /*@OneToMany(mappedBy = "publisher",cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "publisher",cascade = CascadeType.REMOVE)
     private List<Book> bookList;
 
-     */
 
+    public Integer getPublisherId() {
+        return publisherId;
+    }
+
+    public void setPublisherId(Integer publisherId) {
+        this.publisherId = publisherId;
+    }
+
+    public String getPublisherName() {
+        return publisherName;
+    }
+
+    public void setPublisherName(String publisherName) {
+        this.publisherName = publisherName;
+    }
+
+    public Integer getEstablishmentYear() {
+        return establishmentYear;
+    }
+
+    public void setEstablishmentYear(Integer establishmentYear) {
+        this.establishmentYear = establishmentYear;
+    }
+
+    public String getPublisherAddress() {
+        return publisherAddress;
+    }
+
+    public void setPublisherAddress(String publisherAddress) {
+        this.publisherAddress = publisherAddress;
+    }
 }

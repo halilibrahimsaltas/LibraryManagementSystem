@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PublisherResponse {
-    private  int id;
+    private  int publisherId;
     private String  publisherName;
 }

@@ -1,15 +1,14 @@
 package dev.patika.library.core.result;
 
 import lombok.Getter;
-import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.Super;
 
 @Getter
 public class ResultData<T> extends Result {
 
-    private T date;
+    private T data;
 
-    public ResultData(boolean status, String message, String code, T date) {
+    public ResultData(boolean status, String message, String code, T data) {
         super(status, message, code);
-        this.date = date;
+        this.data = data;
     }
 }
